@@ -9,15 +9,7 @@ public class BankApp{
 	ArrayList<String> name = new ArrayList<>();
 	ArrayList<String> name1 = new ArrayList<>();
 	ArrayList<Integer> acctNo = new ArrayList<>();
-	ArrayList<Account> accounts = new ArrayList<>();
-
-	for (int i = 0; i < accounts.size(); i++) {
-            
-
-            Account account = new Account(name, name1, acctNo);
-            accounts.add(account);
-        }
-
+	//ArrayList<Account> accounts = new ArrayList<>();
 	
 		
 		System.out.println("Welcome to the world bank");
@@ -55,7 +47,7 @@ public class BankApp{
                         			case 1:
 								System.out.print("How much do u want to deposit: ");
 								double depositAmount = input.nextDouble();
-								if (depositAmount > 0.0) System.out.println("Invalid amount");
+								if (depositAmount < 0.0) System.out.println("Invalid amount");
 								else balance += depositAmount;
 								System.out.println("Deposit successful. New balance: " + balance);
     								break;
@@ -88,7 +80,6 @@ public class BankApp{
 								System.out.print("Are you sure you want to delete your account (yes/no): ");
                     						String delete = input.nextLine().toLowerCase();
                     						if (delete.equals("yes")) {
-                        					account.remove(accounts);                         
 								System.out.println("Account deleted successfully.");
                         					return;  
 					                        } else {

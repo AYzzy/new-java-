@@ -7,7 +7,7 @@ public class CardValidator{
 		int myNumber = 1230456;
     		List<Integer> digits = separateDigits(myNumber);
     		for(int i =0; i < digits;i++){
-			digits *= digits;
+			digits *= 2;
 			System.out.println(add);
 		}
 	}
