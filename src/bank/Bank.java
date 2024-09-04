@@ -35,7 +35,7 @@ public class Bank {
     public int getBalance(String accountNumber, String pin) {
         Account getBalance = findByAccountNumber(Integer.parseInt(accountNumber));
         if(getBalance != null && getBalance.pinVerification(pin))
-            return (int) getBalance.getBalance(pin);
+            return getBalance.getBalance(pin);
         return 0;
     }
 }

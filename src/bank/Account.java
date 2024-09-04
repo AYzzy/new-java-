@@ -16,16 +16,15 @@ public class Account {
     public String getAccountNumber() {
         return accountNumber;
     }
-    public double getBalance(String pin){
+    public int getBalance(String pin){
         return balance;
     }
 
     private boolean amountIsGreaterThanZero(int amount){
         return amount > 0;
     }
-    public int deposit(int amount) {
+    public void deposit(int amount) {
         if(amountIsGreaterThanZero(amount)) balance += amount;
-        return amount;
     }
 
     public void withdraw(int amount,String correctPin) {
