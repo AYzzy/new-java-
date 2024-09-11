@@ -1,3 +1,5 @@
+package GateOne;
+
 import java.util.Scanner;
 
 public class MBTI{

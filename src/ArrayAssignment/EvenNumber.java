@@ -1,3 +1,5 @@
+package ArrayAssignment;
+
 public class EvenNumber{
 
 	public int[] getEvenNumber(int [] number){

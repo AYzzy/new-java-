@@ -6,3 +6,4 @@ public enum CardType {
     VERVE,
     AMERICA_EXPRESS
 }
+

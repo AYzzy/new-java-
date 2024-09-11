@@ -1,3 +1,5 @@
+package ArrayAssignment;
+
 public class LargestNumber{
 
 	public int getLargestNumber(int [] number){

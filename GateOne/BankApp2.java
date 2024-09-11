@@ -1,34 +1,10 @@
+package GateOne;
+
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.security.SecureRandom;
     
-    class Account {
-        String firstName;
-        String lastName;
-        String pin;
-        int accountNumber;
-        double balance;
 
-       public Account(String firstName, String lastName, String pin, int accountNumber) {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.pin = pin;
-            this.accountNumber = accountNumber;
-            this.balance = 0.0;
-        }
-
-       public boolean isPin(String pin) {
-            return this.pin.equals(pin);
-        }
-
-      public void changePin(String newPin) {
-            this.pin = newPin;
-        }
-      public String toString() {
-        return String.format("Account Number: %d, Name: %s %s, Balance: %.2f", 
-                             accountNumber, firstName, lastName, balance);
-    	}
-    }
 
     public class BankApp2{
     public static void main(String[] args) {
@@ -54,7 +30,7 @@ import java.security.SecureRandom;
                     System.out.println("8. Exit");
                     System.out.print("Enter your choice: ");
                     int action = input.nextInt();
-                    input.nextLine(); 
+                    input.nextLine();
                     switch (action) {
 			case 1:
 				System.out.println("Enter first name: ");
@@ -93,8 +69,8 @@ import java.security.SecureRandom;
                             int withdrawAccountNumber = input.nextInt();
                             Account withdrawAccount = findAccountByNumber(accounts, withdrawAccountNumber);
 			    System.out.print("Enter PIN to proceed with withdrawal: ");
-            		    String pin = input.nextLine();
-            		    if (account.isPin(pin)) {	
+            		    String pins = input.nextLine();
+            		    if (newAccount.isPin(pins)) {
                             	if (withdrawAccount != null) {
                                 	System.out.print("Enter amount to withdraw: ");
                                 	double withdrawAmount = input.nextDouble();
@@ -116,8 +92,8 @@ import java.security.SecureRandom;
                             int balanceAccountNumber = input.nextInt();
                             Account balanceAccount = findAccountByNumber(accounts, balanceAccountNumber);
 			    System.out.print("Enter PIN to close the account: ");
-            		    String pin = input.nextLine();
-            		    if (account.isPin(pin)) {
+            		    String pins = input.nextLine();
+            		    if (newAccount.isPin(pins)) {
                             	if (balanceAccount != null) {
                                 	System.out.println("Current balance: " + balanceAccount.balance);
                             	} else {
@@ -152,17 +128,17 @@ import java.security.SecureRandom;
 			    int sendersAccountNumber = input.nextInt();
 			    Account senderAccount = findAccountByNumber(accounts, sendersAccountNumber);
 			    System.out.print("Enter pin to the account: ");
-            		    String pin = input.nextLine();
+                String pins = input.nextLine();
 			    System.out.println("Enter receivers account number: ");
 			    int receiversAccountNumber = input.nextInt();
 			    System.out.print("Enter amount to transfer: ");
-                            double transferAmount = input.nextDouble();
+                double transferAmount = input.nextDouble();
 			    Account receiversAccount = findAccountByNumber(accounts, receiversAccountNumber);
-			    if (account.isPin(pin)) {
-				if(sendersAccount != null){
+			    if (newAccount.isPin(pins)) {
+				if(senderAccount != null){
 					if(transferAmount >= senderAccount.balance){
-						senderAccount.balance-= tranferAmount;
-						receiversAccount+=transferAmount;
+						senderAccount.balance -= transferAmount;
+                        receiversAccount.balance += transferAmount;
 					}
 					else{
 						System.out.println("Insufficient balance");
@@ -220,13 +196,16 @@ import java.security.SecureRandom;
         }
     }
     
-    private static Account findAccountByNumber(ArrayList<Account> accounts, int accountNumber) {
-        for (Account account : accounts) {
-            if (account.accountNumber == accountNumber) {
-                return account;
-            }
-        }
-        return null;
-    }
+
 }
+
+        private static Account findAccountByNumber(ArrayList<Account> accounts, int accountNo) {
+            for (Account account : accounts) {
+                if (account.accountNumber == accountNo) {
+                    return account;
+                }
+            }
+            return null;
+        }
+        }
 

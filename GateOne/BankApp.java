@@ -1,3 +1,5 @@
+package GateOne;
+
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.security.SecureRandom;

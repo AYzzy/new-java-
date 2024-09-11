@@ -1,3 +1,5 @@
+package ArrayAssignment;
+
 public class ArrayFunction{
 
 	public int[] getEvenNumber(int [] number){

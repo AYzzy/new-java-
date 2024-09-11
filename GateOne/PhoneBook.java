@@ -1,3 +1,5 @@
+package GateOne;
+
 import java.util.Scanner;
 import java.security.SecureRandom;
 public class BankApp{

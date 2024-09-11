@@ -1,3 +1,5 @@
+package GateOne;
+
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.security.SecureRandom;
@@ -26,7 +28,7 @@ public class GtBankApp {
                 System.out.println("Congratulations, " + firstName + " " + lastName + "! You have successfully created an account.");
                 System.out.println("Your account number is " + acctNo);
 
-                Account newAccount = new Account(firstName, lastName, pin, 0.0, acctNo);
+                Account newAccount = new Account(firstName, lastName, pin,  acctNo);
                 accounts.add(newAccount);
 
                 while (true) {
@@ -40,7 +42,7 @@ public class GtBankApp {
                     System.out.print("Enter your choice: ");
                     int action = input.nextInt();
 
-                    double balance = newAccount.getBalance(); // Get balance from Account object
+                    double balance = newAccount.balance(); // Get balance from Account object
 
                     switch (action) {
                         case 1:

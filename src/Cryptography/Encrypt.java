@@ -1,4 +1,6 @@
-import java.util.Scanner;		
+package Cryptography;
+
+import java.util.Scanner;
 public class Encrypt{
 
 	public static void main(String [] args){
