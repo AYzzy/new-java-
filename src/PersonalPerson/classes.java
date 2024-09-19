@@ -7,9 +7,10 @@ public class classes {
         System.out.println(cat.getName());
         System.out.println(cat.getAge());
 
-        Cat cat1 = new Cat("Kitten",3);
-        cat1.meow();
-        System.out.println(cat.getName());
+        Cat cat1 = new Cat("jupiter");
+
+        System.out.println(cat1.getName());
+        System.out.println(cat1.getAge());
     }
 
 }

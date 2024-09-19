@@ -7,6 +7,13 @@ public class Cat {
         this.age = age;
         this.name = name;
     }
+    public Cat(String name){
+        this.age = 0;
+        this.name = name;
+    }
+
+    public Cat() {
+    }
 
     public int getAge() {
         return age;
