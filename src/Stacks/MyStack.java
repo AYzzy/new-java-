@@ -1,6 +1,11 @@
+package Stacks;
+
 public class MyStack {
     private boolean isEmpty = true;
     private int numberOfElement=0;
+    public MyStack(){
+
+    }
 
     public boolean isEmpty() {
         //return isEmpty;
