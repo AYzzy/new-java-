@@ -1,7 +1,6 @@
 package Stacks;
 
 import org.junit.Test;
-import org.junit.jupiter.api.BeforeEach;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -69,7 +68,7 @@ public class QueueTest {
 
     @Test
     public void testIsFull() {
-        Queue queue = new Queue(3);GIT
+        Queue queue = new Queue(3);
         queue.enqueue(1);
         queue.enqueue(2);
         queue.enqueue(3);

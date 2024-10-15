@@ -8,15 +8,15 @@ public class Map {
     private static final int INITIAL_CAPACITY = 10;
 
     public Map() {
-        elements = new Object[INITIAL_CAPACITY][2];
+        elements = new String[INITIAL_CAPACITY][2];
         size = 0;
     }
 
     public void put(String key, int value) {
         if (containsKey(key)) {
-            for (int i = 0; i < size; i++) {
-                if (elements[i][0].equals(key)) {
-                    elements[i][1] = value;
+            for (int count = 0; count < size; count++) {
+                if (elements[count][0].equals(key)) {
+                    elements[count][1] = value;
                     return;
                 }
             }
@@ -31,17 +31,17 @@ public class Map {
     }
 
     public Object get(String key) {
-        for (int i = 0; i < size; i++) {
-            if (elements[i][0].equals(key)) {
-                return elements[i][1];
+        for (int count = 0; count < size; count++) {
+            if (elements[count][0].equals(key)) {
+                return elements[count][1];
             }
         }
-        return null; // Return null if key is not found
+        return null;
     }
 
     public boolean containsKey(String key) {
-        for (int i = 0; i < size; i++) {
-            if (elements[i][0].equals(key)) {
+        for (int count = 0; count < size; count++) {
+            if (elements[count][0].equals(key)) {
                 return true;
             }
         }
@@ -49,10 +49,10 @@ public class Map {
     }
 
     public Object remove(String key) {
-        for (int i = 0; i < size; i++) {
-            if (elements[i][0].equals(key)) {
-                Object value = elements[i][1];
-                elements[i] = elements[size - 1];
+        for (int count = 0; count < size; count++) {
+            if (elements[count][0].equals(key)) {
+                Object value = elements[count][1];
+                elements[count] = elements[size - 1];
                 elements[size - 1] = null;
                 size--;
                 return value;
@@ -66,8 +66,8 @@ public class Map {
     }
 
     public void clear() {
-        for (int i = 0; i < size; i++) {
-            elements[i] = null;
+        for (int count = 0; count < size; count++) {
+            elements[count] = null;
         }
         size = 0;
     }
